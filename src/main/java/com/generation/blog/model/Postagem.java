@@ -40,6 +40,8 @@ public class Postagem {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis()); */
 
+	// toda vez que tiver um relacionamento PRECISO passar um Json
+	// relacionamento já foi estabelecido com a classe Tema
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
