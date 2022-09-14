@@ -42,7 +42,7 @@ public class BasicSecurityConfig {
                 .antMatchers("/usuarios/logar").permitAll()
                 .antMatchers("/usuarios/cadastrar").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll() // se eu n quiser que o usuário exclua algo devo modificar aqui
-                .anyRequest().authenticated()) // tudo será mediante autenticação
+                .anyRequest().authenticated()) // tudo será mediante autenticação!!!
             .httpBasic();
 
         return http.build(); // pegar todas as regrinhas configuradas acima substituir a segurança padrão 

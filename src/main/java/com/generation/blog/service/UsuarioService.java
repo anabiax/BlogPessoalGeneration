@@ -22,7 +22,7 @@ public class UsuarioService {
 	
     private String criptografarSenha(String senha) {
 
-    	// semelhante ao Scanner() do Java
+    	// semelhante ao Scanner() do Java.
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         
         // usando o método do bcrypt que criptografa a senha digitada e retorna a senha já criptografada
@@ -34,7 +34,7 @@ public class UsuarioService {
 
     	// verificar se o usuário está cadastrado já
         if (usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
-            return Optional.empty();
+            return Optional.empty(); //ñ deixa cadastrar 
 
         usuario.setSenha(criptografarSenha(usuario.getSenha())); // criptografando a senha
         	// inserindo dentro do campo de senha
@@ -67,12 +67,13 @@ public class UsuarioService {
         return Optional.empty();
     
     }   
-
+    	//função do Opcional: verificar se está ou não no banco de dados.
     public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
-
+    					
+    					//está retornando informação do banco
         Optional<Usuario> usuario = usuarioRepository.findByUsuario(usuarioLogin.get().getUsuario());
 
-        if (usuario.isPresent()) {
+        if (usuario.isPresent()) { // for true
 
             if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenha())) {
 
@@ -86,22 +87,24 @@ public class UsuarioService {
 
             }
         }   
-
+        // se o estado estiver no estado false
         return Optional.empty();
         
     }
-    
+    							
     private boolean compararSenhas(String senhaDigitada, String senhaBanco) {
         
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         
         return encoder.matches(senhaDigitada, senhaBanco);
-
+        			  //descriptografa senha
     }
 
     private String gerarBasicToken(String usuario, String senha) {
 
         String token = usuario + ":" + senha;
+        
+        						//ação de criptografia								// padrão de criptografia simples
         byte[] tokenBase64 = Base64.encodeBase64(token.getBytes(Charset.forName("US-ASCII")));
         return "Basic " + new String(tokenBase64);
 
