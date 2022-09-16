@@ -22,7 +22,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Table(name = "tb_usuarios")
 public class Usuario {
 	
-	
 	// construção do objeto
 	
 	@Id
@@ -30,7 +29,7 @@ public class Usuario {
 	private Long id;
 	
 	@NotNull
-	@Size(min= 5, max= 100, message = "O atributo nome é obrigatório.")
+	@Size(min= 3, max= 100, message = "O atributo nome é obrigatório.")
 	private String nome;
 	
 	@Schema(example = "email@email.com.br")
