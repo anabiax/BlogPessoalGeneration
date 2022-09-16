@@ -22,6 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.blog.model.Usuario;
 import com.generation.blog.repository.UsuarioRepository;
+import com.generation.blog.service.UsuarioService;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -30,6 +31,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	@GetMapping
 	public ResponseEntity<List<Usuario>> getAll(){

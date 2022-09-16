@@ -1,5 +1,6 @@
 package com.generation.blog.model;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;

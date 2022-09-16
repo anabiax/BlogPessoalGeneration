@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_usuarios")
 public class Usuario {
 	
+	
 	// construção do objeto
 	
 	@Id
@@ -45,6 +46,18 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
+	// métodos construtores por meio destes dois Métodos iremos instanciar alguns objetos da Classe Usuario nas nossas Classes de teste
+	
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+			this.id = id;
+			this.nome = nome;
+			this.usuario = usuario;
+			this.senha = senha;
+			this.foto = foto;
+		}
+		
+	public Usuario () { }
+
 	
 	/* Getters e Setters */
 
