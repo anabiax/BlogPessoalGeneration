@@ -35,9 +35,7 @@ public class Postagem {
 
 	@UpdateTimestamp
 	private LocalDateTime data;
-	/*
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date date = new java.sql.Date(System.currentTimeMillis()); */
+	
 
 	// toda vez que tiver um relacionamento PRECISO passar um Json
 	// relacionamento já foi estabelecido com a classe Tema

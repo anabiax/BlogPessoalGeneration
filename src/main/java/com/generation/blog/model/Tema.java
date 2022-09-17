@@ -36,10 +36,10 @@ public class Tema {
 	@JsonIgnoreProperties("tema")  // obj de tema está atrelado ao de tema e vice-versa. um pertence ao outro. isso é recursividade - gera um efeito de loop eterno, mas com Json trava a aplicação assim que pega o que quer.
 	private List<Postagem> postagem;
 	    // definição de que várias postagens serão exibidas numa lista
-		// precisa ser obrigatoriamente um array
+		// precisa ser obrigatoriamente um array.
 	
-	// get e set - manipular os dados dentro da tabela
-	// tem que ter todos, caso contrário quebrará a regra de negócio do código 
+	// get e set - manipular os dados dentro da tabela.
+	// tem que ter todos, caso contrário quebrará a regra de negócio do código.
 	
 	public long getId() {
 		return id;

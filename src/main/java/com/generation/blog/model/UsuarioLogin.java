@@ -2,7 +2,7 @@ package com.generation.blog.model;
 
 public class UsuarioLogin {
 
-	// objeto de apoio p/ a pessoa logar
+	// objeto de apoio p/ a pessoa logar.
 	
 	private Long id;
 	private String nome;
@@ -10,8 +10,8 @@ public class UsuarioLogin {
 	private String senha;
 	private String foto;
 	private String token; // contém infos de usuário e senha. 
-						//diferenciar se o usuário está logado ou não - apoio interno
-					  // como se fosse uma chave digital
+						//diferenciar se o usuário está logado ou não - apoio interno.
+					  // como se fosse uma chave digital...
 					// usuário só tem acesso ao token se estiver logado e este, por sua vez, se renova a cada entrada.
 	
 	public Long getId() {
